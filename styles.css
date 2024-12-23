@@ -1,0 +1,173 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #d5e3f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.team {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.player1, .player2, .player3, .player4, .player5 {
+    background-color: #1e3a8a;
+    height: 200px;
+    width: 140px;
+    position: relative;
+    margin: 0 20px;
+    border: 10px solid #0f172a;
+    border-bottom: none;
+    border-radius: 60px 80px 0 0;
+    z-index: 1;
+}
+
+.player1::after,
+.player2::after,
+.player3::after,
+.player4::after,
+.player5::after {
+    content: "";
+    position: absolute;
+    width: 92%;
+    height: 85%;
+    background-color: #1d4ed8;
+    top: 2.5px;
+    left: 6px;
+    border-radius: 58% 70% 28% 42% / 28% 56% 88% 89%;
+}
+
+.legs {
+    height: 50px;
+    width: 60px;
+    background-color: #1e3a8a;
+    position: absolute;
+    bottom: -50px;
+    left: -10px;
+    border: 10px solid #0f172a;
+    border-top: none;
+    border-radius: 0 0 22px 22px;
+    z-index: 1;
+}
+
+.legs::before {
+    content: "";
+    height: 45px;
+    width: 60px;
+    background-color: #1e3a8a;
+    position: absolute;
+    right: -90px;
+    border: 10px solid #0f172a;
+    border-top: none;
+    border-radius: 0 0 22px 22px;
+}
+
+.legs::after {
+    content: "";
+    height: 10px;
+    width: 55px;
+    background-color: #0f172a;
+    position: absolute;
+    top: -10px;
+    left: 40px;
+    border-radius: 0 0 10px 0;
+}
+
+.back {
+    height: 120px;
+    width: 35px;
+    background-color: #1d4ed8;
+    border: 10px solid #0f172a;
+    position: absolute;
+    left: -45px;
+    top: 65px;
+    border-right: none;
+    border-radius: 20px 0 0 20px;
+}
+
+.back::before {
+    content: "";
+    position: absolute;
+    height: 78px;
+    width: 26px;
+    background-color: #1e3a8a;
+    bottom: -0.5px;
+    left: -1px;
+    border-radius: 12px 0 0 8px;
+}
+
+.glass {
+    height: 75px;
+    width: 110px;
+    background-color: #1e40af;
+    z-index: 2;
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    border-radius: 25px 50px 30px 30px;
+    border: 10px solid #0f172a;
+}
+
+.glass::before {
+    content: "";
+    position: absolute;
+    width: 85%;
+    height: 65%;
+    background-color: #93c5fd;
+    border-radius: 0 28px 3px 30px;
+    right: 0;
+    top: 0;
+}
+
+.glass::after {
+    content: "";
+    position: absolute;
+    width: 45%;
+    height: 22%;
+    background-color: #f0f9ff;
+    left: 39px;
+    top: 5px;
+    border-radius: 10px;
+    transform: rotate(6deg);
+}
+
+.shadow {
+    height: 40px;
+    width: 210px;
+    background-color: rgba(0, 0, 64, 0.2);
+    position: absolute;
+    bottom: -60px;
+    right: -40px;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: fit-content;
+        flex-direction: column;
+        width: 90vw;
+        height: auto;
+        aspect-ratio: auto;
+    }
+
+    .player2, .player3, .player4, .player5 {
+        display: hidden;
+    }
+
+    .team {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
